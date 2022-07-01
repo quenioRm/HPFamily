@@ -11,7 +11,8 @@
                 <h5>File Upload</h5>
             </div>
             <div class="card-body">
-                <form action="../assets/plugins/fileupload/js/file-upload.php" class="dropzone">
+                <form action="{{route('uploadFiles')}}" class="dropzone">
+                    @csrf
                     <div class="fallback">
                         <input name="file" type="file" multiple />
                     </div>

@@ -3,33 +3,43 @@
 @section('title', 'Cadastro[1] - Novo')
 
 @section('content')
+<div class="card-body">
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <h3 class="d-inline-block mb-0">Novo Registro</h3>
+        </div>
+    </div>
+</div>
 <div class="card shadow-none">
     <div class="card-body shadow border-0">
-        <form>
+        <form action="{{route('cad1RegNew')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
-                <label>Customer</label>
-                <select class="mb-3 form-control">
-                    <option>Default select</option>
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label>Status do pagamento</label>
+                <select name="status_payment" class="mb-3 form-control">
+                    <option value="1">Não Pago</option>
+                    <option value="0">Pago</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Category</label>
-                <select class="mb-3 form-control">
-                    <option>Default select</option>
-                </select>
+                <label for="fantasy">Fantasia</label>
+                <input type="text" class="form-control" id="fantasy" name="fantasy" placeholder="Fantasia">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Subject</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="observations">Observações</label>
+                <input type="text" class="form-control" id="observations" name="observations" placeholder="Observações">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
-                <textarea id="tinymce-editor">
-                      <p>hello..</p>
-                </textarea>
-                <br>
+                <div class="file btn btn-outline-primary mt-3 file-btn">
+                    <i class="feather icon-paperclip"></i>Add Atachment
+                    <input type="file" name="files[]" multiple/>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
     </div>
 </div>

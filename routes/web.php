@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'HomeGet'])->name('home');
-Route::get('/Upload', [App\Http\Controllers\HomeController::class, 'UploadFilesGet'])->name('uploadFiles');
-Route::get('/Cad1Index', [App\Http\Controllers\HomeController::class, 'Cadastro_1Index'])->name('cad1Index');
-Route::get('/Cad1RegNew', [App\Http\Controllers\HomeController::class, 'Cadastro_1RegNew'])->name('cad1RegNew');
+Route::get('/Upload', [App\Http\Controllers\UploadController::class, 'UploadFilesGet'])->name('uploadFiles');
+Route::post('/Upload', [App\Http\Controllers\UploadController::class, 'UploadFilesPost']);
+Route::get('/Cad1Index', [App\Http\Controllers\Cadastro1Controller::class, 'Cadastro_1Index'])->name('cad1Index');
+Route::get('/Cad1RegNew', [App\Http\Controllers\Cadastro1Controller::class, 'Cadastro_1RegNew'])->name('cad1RegNew');
+Route::post('/Cad1RegNew', [App\Http\Controllers\Cadastro1Controller::class, 'Cadastro_1RegNewPost']);

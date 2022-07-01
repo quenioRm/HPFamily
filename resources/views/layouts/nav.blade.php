@@ -17,12 +17,11 @@
                 <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics crypto project" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{route('uploadFiles')}}" class="">Upload de arquivos</a></li>
                         <li class=""><a href="{{route('cad1Index')}}" class="">Cadastro [ 1 ]</a></li>
                         <li class=""><a href="dashboard-sale.html" class="">Cadastro [ 2 ]</a></li>
                     </ul>
                 </li>
-            </ul>  
+            </ul>
         </div>
     </div>
 </nav>

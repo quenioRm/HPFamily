@@ -31,9 +31,6 @@
 
 	<!-- vendor css -->
 	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-
-    <link rel="stylesheet" href="{{asset('assets/css/pages/fileupload.css')}}">
-	
 </head>
 
 <body class="">
@@ -47,7 +44,7 @@
 	<!-- [ Pre-loader ] End -->
 	<!-- [ navigation menu ] start -->
     @include('layouts.nav')
-    
+
     {{-- @endif --}}
 	<!-- [ navigation menu ] end -->
 
@@ -55,7 +52,7 @@
     @include('layouts.header')
 	<!-- [ Header ] end -->
 	<!-- [ chat message ] start -->
-	
+
     <!-- [ Main Content ] start -->
     <section class="pcoded-main-container">
         <div class="pcoded-wrapper">
@@ -145,10 +142,8 @@
 
     <!-- datatable Js -->
     <script src="{{asset('assets/plugins/data-tables/js/datatables.min.js')}}"></script>
-    <script src="{{asset('assets/js/pages/data-basic-custom.js')}}"></script>
-    <script src="{{asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     {{-- <script src="{{asset('assets/js/pages/data-autofill-custom.js')}}"></script> --}}
-  
+
     @stack('scripts')
 
     @include('layouts.footer')
