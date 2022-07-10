@@ -43,17 +43,22 @@
 	</div> --}}
 	<!-- [ Pre-loader ] End -->
 	<!-- [ navigation menu ] start -->
+    @if(Route::currentRouteName() != "cad1IndexGeneral" && Route::currentRouteName() != "Cadastro1IndexGeneralView")
     @include('layouts.nav')
+    @endif
 
     {{-- @endif --}}
 	<!-- [ navigation menu ] end -->
 
 	<!-- [ Header ] start -->
+    @if(Route::currentRouteName() != "cad1IndexGeneral" && Route::currentRouteName() != "Cadastro1IndexGeneralView")
     @include('layouts.header')
+    @endif
 	<!-- [ Header ] end -->
 	<!-- [ chat message ] start -->
 
     <!-- [ Main Content ] start -->
+    @if(Route::currentRouteName() != "cad1IndexGeneral" && Route::currentRouteName() != "Cadastro1IndexGeneralView")
     <section class="pcoded-main-container">
         <div class="pcoded-wrapper">
             <div class="pcoded-content">
@@ -86,6 +91,9 @@
             </div>
         </div>
     </section>
+    @else
+    @yield('content')
+    @endif
     <!-- [ Main Content ] end -->
 
     <!-- Warning Section start -->

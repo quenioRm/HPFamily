@@ -1,22 +1,23 @@
 @extends('layouts.main')
 
-@section('title', 'Cadastro[1] - Novo')
+@section('title', 'Cadastro[1] - Editar')
 
 @section('content')
 <div class="card-body">
     <div class="row align-items-center">
         <div class="col-md-12">
-            <h3 class="d-inline-block mb-0">Novo Registro</h3>
+            <h3 class="d-inline-block mb-0">Editar Registro</h3>
         </div>
     </div>
 </div>
 <div class="card shadow-none">
     <div class="card-body shadow border-0">
-        <form action="{{route('cad1RegNew')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('cad1RegEdit', $data->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nome" value="{{old('name')}}">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nome" 
+                value="{{old('name', $data->name)}}">
             </div>
             @if ($errors->has('name'))
             <p>
@@ -28,8 +29,8 @@
             <div class="form-group">
                 <label>Status do pagamento</label>
                 <select name="status_payment" class="mb-3 form-control">
-                    <option value="1" @if (old('status_payment') == "1") {{ 'selected' }} @endif>Não Pago</option>
-                    <option value="0" @if (old('status_payment') == "0") {{ 'selected' }} @endif>Pago</option>
+                    <option value="1" @if (old('status_payment', $data->status_payment) == "1") {{ 'selected' }} @endif>Não Pago</option>
+                    <option value="0" @if (old('status_payment', $data->status_payment) == "0") {{ 'selected' }} @endif>Pago</option>
                 </select>
             </div>
             @if ($errors->has('status_payment'))
@@ -41,7 +42,8 @@
             @endif
             <div class="form-group">
                 <label for="fantasy">Fantasia</label>
-                <input type="text" class="form-control" id="fantasy" name="fantasy" placeholder="Fantasia" value="{{old('fantasy')}}">
+                <input type="text" class="form-control" id="fantasy" name="fantasy" placeholder="Fantasia"
+                value="{{old('fantasy', $data->fantasy)}}">
             </div>
             @if ($errors->has('fantasy'))
             <p>
@@ -52,7 +54,8 @@
             @endif
             <div class="form-group">
                 <label for="observations">Observações</label>
-                <input type="text" class="form-control" id="observations" name="observations" placeholder="Observações" value="{{old('observations')}}">
+                <input type="text" class="form-control" id="observations" name="observations" placeholder="Observações"
+                value="{{old('observations', $data->observations)}}">
             </div>
             @if ($errors->has('observations'))
             <p>
@@ -67,10 +70,20 @@
                     <input type="file" name="files[]" multiple/>
                 </div>
             </div>
-            @if ($errors->has('files.0'))
+            <div class="form-group">
+                @foreach ($data->cadastro_1_images as $cadastro_1_image)
+                <p>
+                    <span>{{$cadastro_1_image->name}}</span>
+                    <span> <a target="_blank" href="{{url('storage/' . $cadastro_1_image->path)}}">abrir</a> |</span>
+                    <span><a href="{{route('cad1RegDeleteFile', $cadastro_1_image->id)}}">remover</a></span>
+                </p>
+                    
+                @endforeach
+            </div>
+            @if ($errors->has('file'))
             <p>
                 <div class="alert alert-danger">
-                    {{ $errors->first('files.0') }}
+                    {{ $errors->first('file') }}
                 </div>
             </p>
             @endif  

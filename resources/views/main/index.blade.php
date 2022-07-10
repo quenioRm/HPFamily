@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Cadastro[1] - Index')
+@section('title', 'Resumo Geral')
 
 @section('content')
     <!-- Scroll - Vertical table start -->
@@ -10,7 +10,6 @@
                 <h5>Resumo de pagamentos</h5>
             </div>
             <div class="card-body">
-                <a href="{{route('cad1RegNew')}}" class="btn btn-success sweet-success">Adicionar Novo</a>
                 <div class="dt-responsive table-responsive">
                     <table id="autofill" class="table table-striped table-bordered nowrap">
                         <thead>
@@ -47,7 +46,7 @@ function loadData(){
             ],
             "processing" : true,
             "ajax" : {
-                "url" : '{{route('Cadastro1GetJson')}}',
+                "url" : '{{route('Cadastro1GetGeneralJson')}}',
                 "type" : "GET"
             },
             "columns" : [
@@ -60,13 +59,10 @@ function loadData(){
                 { 
                     data: function(row){
 
-                        var urlEdit = '{{ route("cad1RegEdit", ":id") }}';
+                        var urlEdit = '{{ route("Cadastro1IndexGeneralView", ":id") }}';
                         urlEdit = urlEdit.replace(':id', row.id);
 
-                        var urlDelete = '{{ route("Cad1RegDelete", ":id") }}';
-                        urlDelete = urlDelete.replace(':id', row.id);
-
-                        return '<a class="btn btn-info btn-xs edit" href="'+urlEdit+'"><i class="fa fa-wrench"></i>Editar</a><a class="btn btn-danger" href="'+urlDelete+'"><i class="fa fa-trash"></i>Remover</a>' 
+                        return '<a class="btn btn-info btn-xs edit" href="'+urlEdit+'"><i class="fa fa-eye"></i>Ver</a>' 
                     }
                 }
             ]
