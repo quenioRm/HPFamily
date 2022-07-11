@@ -24,17 +24,18 @@ class cadastro_1 extends Model
         $cad->fantasy = $inputs['fantasy'];
         $cad->save();
 
-
-        for ($i=0; $i < count($inputs['files']); $i++) {
-            $file = $inputs['files'][$i];
-
-            $image = new cadastro_1_images();
-            $image->cadastro_id = $cad->id;
-            $image->name = $file->getClientOriginalName();
-            $image->path = $file->store('public/cadastro1/' . $cad->id);
-            $image->path = str_replace("public/", "", $image->path);
-            $image->save();
-            unset($image);
+        if(isset($inputs['files'])){
+            for ($i=0; $i < count($inputs['files']); $i++) {
+                $file = $inputs['files'][$i];
+    
+                $image = new cadastro_1_images();
+                $image->cadastro_id = $cad->id;
+                $image->name = $file->getClientOriginalName();
+                $image->path = $file->store('public/cadastro1/' . $cad->id);
+                $image->path = str_replace("public/", "", $image->path);
+                $image->save();
+                unset($image);
+            }
         }
     }
 
