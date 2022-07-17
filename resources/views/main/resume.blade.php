@@ -39,10 +39,20 @@
                             <tr>
                                 <th>Status :</th>
                                 <td>
-                                    @if($data->status_payment == 1)
+                                    @if($data->status_payment == 0)
                                     <span class="label label-success">pago</span>
-                                    @else
+                                    @elseif($data->status_payment == 1)
                                     <span class="label label-warning">Não pago</span>
+                                    @elseif($data->status_payment == 2)
+                                    <span class="label label-warning">pago 1/3</span>
+                                    @elseif($data->status_payment == 3)
+                                    <span class="label label-warning">pago 2/3</span>
+                                    @elseif($data->status_payment == 4)
+                                    <span class="label label-success">pago 3/3</span>
+                                    @elseif($data->status_payment == 5)
+                                    <span class="label label-warning">pago 1/2</span>
+                                    @else
+                                    <span class="label label-success">pago 2/2</span>
                                     @endif
                                 </td>
                             </tr>

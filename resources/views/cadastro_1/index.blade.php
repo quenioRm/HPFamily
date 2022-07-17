@@ -16,6 +16,7 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
+                                <th>Fantasia</th>
                                 <th>Observações</th>
                                 <th></th>
                             </tr>
@@ -53,7 +54,10 @@ function loadData(){
             "columns" : [
                 {
                     "data" : "name"
-                }, 
+                },   
+                {
+                    "data" : "fantasy"
+                },
                 {
                     "data" : "observations"
                 }, 

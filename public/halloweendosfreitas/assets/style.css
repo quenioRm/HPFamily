@@ -1,0 +1,424 @@
+@font-face {
+    font-family: gordita_medium;
+    src: url(fonts/Gordita\ Medium.otf);
+}
+
+@font-face {
+    font-family: halloween;
+    src: url(fonts/Halloween\ Night.otf);
+}
+
+body {
+    font-family: gordita_medium;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+}
+
+.top-img {
+    text-align: center;
+    margin: auto;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/a.jpg) center;
+    background-position-y: -350px;
+    background-size: 1000px 1000px;
+    overflow: hidden;
+    border-radius: 0px 0px 5px 5px;
+    height: 629px;
+    
+}
+
+.logo {
+    margin-top: 20%;
+}
+
+.tittle-one {
+    font-family: halloween;
+    color: rgba(249, 205, 98, 1);
+    font-size: 40px;
+    line-height: 70%;
+    position: absolute;
+    top: 370px;
+}
+
+.tittle-two {
+    font-family: halloween;
+    color: white;
+    font-size: 21px;
+}
+
+.top-preco {
+    background: linear-gradient(268.37deg, #644A77 0%, #2E2E2E 100%);
+    border-radius: 5px;
+    font-family: halloween;
+    color: rgba(249, 205, 98, 1);
+
+    padding: 05px 15px 05px 15px;
+    font-size: 29px;
+    position: absolute;
+    top: 380px;
+}
+
+.forma-de-pagamento {
+    background: rgba(249, 205, 98, 1);
+    border-radius: 5px;
+
+    color: black;
+
+    padding: 05px 10px 05px 10px;
+    font-size: 12px;
+    position: absolute;
+    top: 450px;
+}
+
+.clique-direct {
+    position: absolute;
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+    top: 510px;
+}
+
+.container-mensagem {
+    background: url(Icon/base_head_icon.svg) center;
+    height: 231px;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+   
+    position: relative;
+    top: -10px;
+}
+
+.abobora-left{
+    position: absolute;
+    left: -25px;
+    top: 97px;
+}
+
+.abobora-right{
+    position: absolute;
+    right: 6px;
+    top: 20px;
+}
+
+.comida-container{
+    height: 470px;
+}
+
+.abobora-grande{
+    position: relative;
+    bottom: 150px;
+    right: -120px;
+}
+
+.abobora-pequena{
+    position: relative;
+    left: -150px;
+    top: 30px;
+}
+
+.comida{
+    display: flex;
+    margin: auto;
+}
+
+
+.logo-msg {
+    width: 140px;
+    position: relative;
+    top: -15px;
+}
+
+.mensagem {
+    margin: ;
+    position: relative;
+    bottom: 20px;
+    width: 280px;
+}
+
+.grandioso {
+    color: #F9CD62;
+    font-family: halloween;
+    font-size: 30px;
+}
+
+.anular {
+    text-align: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.tiitle-section {
+    font-family: halloween;
+    font-size: 42px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    color: #644A77;
+}
+
+.sub-section {
+    font-family: halloween;
+    color: #FD990D;
+    font-size: 20px;
+}
+
+.price {
+    color: rgba(249, 205, 98, 1);
+    font-family: halloween;
+    font-size: 31px;
+    margin: auto;
+    padding: 10px;
+    width: 124px;
+    margin-top: 30px;
+
+    background: linear-gradient(268.37deg, #644A77 0%, #2E2E2E 100%);
+    border-radius: 8.5px;
+}
+
+.buy-info {
+    font-family: gordita_medium;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.line {
+    line-height: 81%
+}
+
+.bt-buy {
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 223px;
+    color: black;
+
+    background: linear-gradient(269.01deg, #FD990D -0.99%, #F9CD62 100%);
+    border-radius: 6.35227px;
+}
+
+.emerson {
+    color: #FD990D;
+    text-decoration: none;
+}
+
+footer p{
+    position: relative;
+    bottom: 10px;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    background: url(Icon/design-footer.svg) center;
+    height: 123px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    font-size: 13px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: white;
+    font-size: 8px;
+    padding: 10px 10px 10px 10px;
+    align-items: center;
+    margin: 0;
+}
+
+.menu-bar {
+    
+    background: #644A77;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 2px;
+}
+
+
+.img-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.foto{
+    width: 100%;
+}
+
+.window-pgs {
+    display: flex;
+    background: linear-gradient(268.37deg, #644A77 0%, #2E2E2E 100%);
+    border-radius: 5px;
+    width: 95%;
+    height: 60px;
+
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    bottom: 25px;
+
+}
+
+.tittle-pgs {
+    font-family: halloween;
+    font-size: 26px;
+    color: #F9CD62;
+
+    margin: 0;
+}
+
+.subtittle-pgs {
+    font-family: halloween;
+    font-size: 13px;
+    color: white;
+    margin: 0;
+
+}
+
+.price-pgs {
+    font-family: halloween;
+    font-size: 20px;
+    color: #F9CD62;
+    margin: 0;
+}
+
+.bt-buy-pgs {
+    background: linear-gradient(269.01deg, #FD990D -0.99%, #F9CD62 100%);
+    border-radius: 2px;
+    padding: 3px;
+    font-size: 8px;
+    text-decoration: none;
+}
+
+.pg-detalhes {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.bt-p {
+    background: linear-gradient(268.37deg, #644A77 0%, #2E2E2E 100%);
+    border-radius: 10px;
+
+    color: #F9CD62;
+    font-family: halloween;
+    font-family: 18px;
+
+    padding: 15px 10px 15px 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.p-detalhes {
+    color: #A78EB8;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+.box-buy {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    width: 70%;
+    padding: 40px 20px 30px 20px;
+    background: rgba(217, 217, 217, 0.38);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+.barra {
+    height: 5px;
+    width: 116%;
+    background: linear-gradient(269.91deg, #A78EB8 1.71%, #644A77 98.67%);
+    margin: 5px;
+}
+
+.buy-information p {
+    margin-bottom: 0;
+}
+
+.price-buy {
+    color: #FD990D;
+}
+
+.buy-information {
+    color: rgba(140, 140, 140, 1);
+    margin: 10px;
+}
+
+.lote{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: halloween;
+    color:#2E2E2E;
+    margin: 20px 0px 0px 0px;
+    padding: 0;
+
+}
+
+.info-lotes{
+    display: flex;
+    font-size: 10px;
+    text-decoration: underline;
+    margin: auto;
+    justify-content: center;
+}
+
+.cinza {
+    color: #2e2e2e4a;
+}
+

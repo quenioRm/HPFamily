@@ -28,6 +28,11 @@
             <div class="form-group">
                 <label>Status do pagamento</label>
                 <select name="status_payment" class="mb-3 form-control">
+                    <option value="6" @if (old('status_payment') == "6") {{ 'selected' }} @endif>Pago 2/2</option>
+                    <option value="5" @if (old('status_payment') == "5") {{ 'selected' }} @endif>Pago 1/2</option>
+                    <option value="4" @if (old('status_payment') == "4") {{ 'selected' }} @endif>Pago 3/3</option>
+                    <option value="3" @if (old('status_payment') == "3") {{ 'selected' }} @endif>Pago 2/3</option>
+                    <option value="2" @if (old('status_payment') == "2") {{ 'selected' }} @endif>Pago 1/3</option>
                     <option value="1" @if (old('status_payment') == "1") {{ 'selected' }} @endif>Não Pago</option>
                     <option value="0" @if (old('status_payment') == "0") {{ 'selected' }} @endif>Pago</option>
                 </select>

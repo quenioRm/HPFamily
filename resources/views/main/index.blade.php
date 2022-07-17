@@ -15,8 +15,10 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
+                                <th>Fantasia</th>
                                 <th>Observações</th>
-                                <th></th>
+                                <!-- <th>Status do Pagamento</th> -->
+                                <th>Comprovante</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,10 +54,16 @@ function loadData(){
             "columns" : [
                 {
                     "data" : "name"
+                },  
+                {
+                    "data" : "fantasy"
                 }, 
                 {
                     "data" : "observations"
                 }, 
+            //    {
+            //        "data" : "status_payment"
+            //    },
                 { 
                     data: function(row){
 
