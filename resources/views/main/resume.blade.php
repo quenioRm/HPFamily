@@ -29,7 +29,7 @@
                     <p class="m-0 m-t-10">{{$data->observations}}</p>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <h6>Order Information :</h6>
+                    <h6>Informações :</h6>
                     <table class="table table-responsive invoice-table invoice-order table-borderless">
                         <tbody>
                             <tr>
@@ -68,6 +68,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
+                    <h5>Comprovantes :</h5>
                     <div class="table-responsive">
                         <table class="table invoice-detail-table">
                             <thead>
@@ -81,6 +82,46 @@
                                 <tr>
                                     <td>{{$cadastro_1_image->name}}</td>
                                     <td><a target="_blank" href="{{url('storage/' . $cadastro_1_image->path)}}">abrir</a></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Convidados :</h5>
+                    <div class="table-responsive">
+                        <table class="table invoice-detail-table">
+                            <thead>
+                                <tr class="thead-default">
+                                    <th>Nome</th>
+                                    <th>Grau de parentesco</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data->cadastro_2 as $item)
+                                <tr>
+                                    <td>{{$item->parent1}}</td>
+                                    <td>{{$item->part_parent1}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{$item->parent2}}</td>
+                                    <td>{{$item->part_parent2}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{$item->parent3}}</td>
+                                    <td>{{$item->part_parent3}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{$item->parent4}}</td>
+                                    <td>{{$item->part_parent4}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{$item->parent5}}</td>
+                                    <td>{{$item->part_parent5}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

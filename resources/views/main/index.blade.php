@@ -54,23 +54,23 @@ function loadData(){
             "columns" : [
                 {
                     "data" : "name"
-                },  
+                },
                 {
                     "data" : "fantasy"
-                }, 
+                },
                 {
                     "data" : "observations"
-                }, 
+                },
             //    {
             //        "data" : "status_payment"
             //    },
-                { 
+                {
                     data: function(row){
 
                         var urlEdit = '{{ route("Cadastro1IndexGeneralView", ":id") }}';
                         urlEdit = urlEdit.replace(':id', row.id);
 
-                        return '<a class="btn btn-info btn-xs edit" href="'+urlEdit+'"><i class="fa fa-eye"></i>Ver</a>' 
+                        return '<a class="btn btn-info btn-xs edit" href="'+urlEdit+'"><i class="fa fa-eye"></i>Ver</a>'
                     }
                 }
             ]
@@ -103,7 +103,7 @@ function loadData(){
                 columns: ':not(:first-child)'
             }
         });
-        // [ scroll fill ] 
+        // [ scroll fill ]
         var safill = $('#scroll-fill').dataTable({
             scrollY: 400,
             scrollCollapse: true,

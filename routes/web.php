@@ -27,3 +27,11 @@ Route::get('/Cad1RegDelete/{id}', [App\Http\Controllers\Cadastro1Controller::cla
 Route::get('/Cad1Index/General', [App\Http\Controllers\Cadastro1Controller::class, 'Cadastro_1IndexGeneral'])->name('cad1IndexGeneral');
 Route::get('/Cadastro1GetGeneralJson', [App\Http\Controllers\Cadastro1Controller::class, 'Cadastro1GetGeneralJson'])->name('Cadastro1GetGeneralJson');
 Route::get('/Cad1Index/General/View/{id}', [App\Http\Controllers\Cadastro1Controller::class, 'Cadastro_1IndexGeneralView'])->name('Cadastro1IndexGeneralView');
+
+Route::get('/Cad2Index', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro_2Index'])->name('cad2Index');
+Route::get('/Cad2RegNew', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro_2RegNew'])->name('cad2RegNew');
+Route::post('/Cad2RegNew', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro_2RegNewPost']);
+Route::get('/Cad2RegEdit/{id}', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro_2RegEdit'])->name('cad2RegEdit');
+Route::post('/Cad2RegEdit/{id}', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro_2RegEditPost']);
+Route::get('/Cad2RegDelete/{id}', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro_2RegDeleteGet'])->name('Cad2RegDelete');
+Route::get('/Cadastro2GetGeneralJson', [App\Http\Controllers\Cadastro2Controller::class, 'Cadastro2GetGeneralJson'])->name('Cadastro2GetGeneralJson');

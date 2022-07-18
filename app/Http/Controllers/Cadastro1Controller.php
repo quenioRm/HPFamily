@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class Cadastro1Controller extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('AuthAccount');
+    }
+
     public function Cadastro_1Index()
     {
         return view('cadastro_1.index');
@@ -16,7 +22,39 @@ class Cadastro1Controller extends Controller
 
     public function Cadastro1GetJson()
     {
-        return response()->json(['data' => cadastro_1::get()]);
+        $items = cadastro_1::get();
+        $list[] = [];
+
+        foreach ($items as $key => $item) {
+
+            switch ($item->status_payment) {
+                case 0:
+                    $item->status_payment_text = 'Pago';
+                    break;
+                case 1:
+                    $item->status_payment_text = 'Não Pago';
+                    break;
+                case 2:
+                    $item->status_payment_text = 'Pago 1/3';
+                    break;
+                case 3:
+                    $item->status_payment_text = 'Pago 2/3';
+                    break;
+                case 4:
+                    $item->status_payment_text = 'Pago 3/3';
+                    break;
+                case 5:
+                    $item->status_payment_text = 'Pago 1/2';
+                    break;
+                case 6:
+                    $item->status_payment_text = 'Pago 2/2';
+                    break;
+            }
+
+            $list[$key] = $item;
+        }
+
+        return response()->json(['data' => $list]);
     }
 
     public function Cadastro_1RegNew()
@@ -54,7 +92,7 @@ class Cadastro1Controller extends Controller
 
         return view('cadastro_1.edit')->with(
             [
-                'data' => $data 
+                'data' => $data
             ]
         );
     }
@@ -122,11 +160,11 @@ class Cadastro1Controller extends Controller
 
     public function Cadastro_1IndexGeneralView($id)
     {
-        $data = cadastro_1::where('id',$id)->with('cadastro_1_images')->first();
+        $data = cadastro_1::where('id',$id)->with('cadastro_1_images')->with('cadastro_2')->first();
 
         return view('main.resume')->with(
             [
-                'data' => $data 
+                'data' => $data
             ]
         );
     }
